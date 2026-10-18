@@ -1,18 +1,9 @@
-from typing import Protocol, List
-from src.domain.entities.raw_post import RawPostItem
-from src.domain.value_objects.time_filter import TimeFilter
-
-class ISearchHarvester(Protocol):
-    """Port interface for crawling public search index results."""
-
-    def harvest(
-        self,
-        query: str,
-        time_filter: TimeFilter,
-        max_results: int
-    ) -> List[dict]:
-        """
-        Executes a paginated search query.
-        Returns a list of raw dictionaries containing {'title', 'href', 'body'}.
-        """
-        ...
+# ==============================================================================
+# FILE: src/application/ports/search_harvester_port.py
+# LAYER: Application (Ports / Interfaces)
+#
+# WHY WE NEED THIS FILE:
+# - Defines the abstract contract (Protocol) for searching public search engines.
+# - Decouples our application logic from any specific search tool (DuckDuckGo, Brave, etc.).
+# - If we change search providers in the future, our application code remains untouched.
+# ==============================================================================

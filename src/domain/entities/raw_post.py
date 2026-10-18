@@ -1,10 +1,14 @@
-# ==============================================================================
-# FILE: src/domain/entities/raw_post.py
-# LAYER: Domain (Entities)
-#
-# WHY WE NEED THIS FILE:
-# - Represents the raw, unclassified post harvested from public LinkedIn search results.
-# - Contains fundamental fields: post_id, canonical_url, author_name, raw_snippet,
-#   published_at_utc, and relative_time_display.
-# - Has ZERO external dependencies (no frameworks, no LLM SDKs, no databases).
-# ==============================================================================
+from dataclasses import dataclass
+from datetime import datetime
+from typing import Optional
+
+@dataclass(frozen=True)
+class RawPostItem:
+    """Core domain entity representing an unclassified, harvested post from LinkedIn."""
+    post_id: str
+    canonical_url: str
+    author_name: str
+    raw_snippet: str
+    published_at_utc: Optional[datetime]
+    relative_time_display: str
+    original_title: str

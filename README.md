@@ -2,7 +2,17 @@
 
 A clean-architecture, zero-cost AI agent that monitors public LinkedIn hiring posts, screens them for genuine job opportunities, and matches them against candidate skills.
 
-## Project Structure (Clean Architecture)
+---
+
+## 📚 Complete Project Documentation
+
+* **[Product Requirements Document (PRD)](docs/PRD.md)**: Product scope, personas, functional requirements (FR1–FR10), and non-functional requirements.
+* **[High-Level Design (HLD)](docs/HLD.md)**: System topology, Clean Architecture boundaries, sequence diagrams, and data flow.
+* **[Agent Guidelines](docs/AGENT_GUIDELINES.md)**: Comprehensive guide for AI agents and developers implementing remaining modules.
+
+---
+
+## Clean Architecture Directory Map
 
 ```text
 src/
@@ -22,4 +32,22 @@ src/
 │
 └── presentation/                # Delivery layer
     └── api/                     # FastAPI main entrypoint and HTTP/SSE routes
+```
+
+---
+
+## Quick Start (Search Harvester Test)
+
+```bash
+# 1. Clone repository
+git clone https://github.com/harshsomankar123-tech/Post.git
+cd Post
+
+# 2. Set up virtual environment
+python3 -m venv .venv
+source .venv/bin/activate
+pip install -r requirements.txt
+
+# 3. Run standalone search harvester test
+python test_harvester.py
 ```
